@@ -10,15 +10,15 @@
 
 </head>
 
-<body class="h-auto bg-white dark:bg-[#222] text-[#111] dark:text-slate-300 ">
+<body class="h-auto bg-white dark:bg-[#222] text-[#111] dark:text-slate-300 w-full">
 
   <h1 class="customFont p-6 text-center bg-white dark:bg-[#222] h-[84px] z-20 fixed top-0 left-0 w-full text-3xl font-bold">UI Components</h1>
 
-  <div class=" componentsContainer mt-[84px] p-3 pb-16 flex flex-col gap-y-12">
+  <div class=" componentsContainer mt-[84px] w-full p-3 pb-16 flex flex-col gap-y-12">
 
-    <div class="component formInputWrapper1 w-full font-semibold rounded-lg pb-6 border border-slate-300">
+    <div class="component formInputWrapper1 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400">
 
-      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+      <div class="header relative py-4 px-8 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
         <span>Input Form - I</span>
         <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
         <div class="getCode flex items-center gap-x-3">
@@ -32,9 +32,10 @@
         </div>
       </div>
 
-      <div class="container mt-6 relative overflow-hidden py-6">
+      <div class="wrapper relative px-8 py-10">
 
-        <div class="ui flex flex-col gap-y-8 px-4 ">
+        <div class="ui flex flex-col gap-y-8">
+
           <div class="email relative">
 
             <input type="email" name="Email" id="email" class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]" placeholder="Email ...">
@@ -61,23 +62,17 @@
 
           </div>
 
-          <button class="submitButton w-full rounded-lg uppercase bg-emerald-600 p-3 text-white tracking-wider">Create</button>
+          <button class="submitButton rounded-lg uppercase bg-emerald-600 p-3 text-white tracking-wider">Create</button>
 
-        </div>
-
-        <div class="code absolute overflow-hidden bg-emerald-600 flex p-4 flex-col gap-y-2 h-full w-full px-4 top-0 -right-[100vw] transition-all ease-in-out duration-300 bg-white">
-
-          <div class="compCode h-full w-full overflow-y-auto flex items-start">
-          </div>
         </div>
 
       </div>
 
     </div>
 
-    <div class="component formInputWrapper2 w-full font-semibold rounded-lg pb-6 border border-slate-300">
+    <div class="component formInputWrapper2 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400">
 
-      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+      <div class="header relative py-4 px-8 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
         <span>Input Form - II</span>
         <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
         <div class="getCode flex items-center gap-x-3">
@@ -91,9 +86,9 @@
         </div>
       </div>
 
-      <div class="container mt-6 relative overflow-hidden py-6">
+      <div class="wrapper relative px-8 py-10">
 
-        <div class="ui flex flex-col gap-y-8 px-4 ">
+        <div class="ui flex flex-col gap-y-8">
 
           <div class="email relative">
             <input type="email" name="Email" id="email" class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
@@ -123,9 +118,9 @@
 
     </div>
 
-    <div class="component alerts w-full font-semibold rounded-lg pb-6 border border-slate-300">
+    <div class="component alerts flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400">
 
-      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+      <div class="header relative py-4 px-8 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
         <span>Alerts</span>
         <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
         <div class="getCode flex items-center gap-x-3">
@@ -139,7 +134,7 @@
         </div>
       </div>
 
-      <div class="container mt-6 relative overflow-hidden py-6 px-6">
+      <div class="wrapper relative px-8 py-10">
 
         <div class="alertsWrapper rounded-lg w-full p-5 relative flex items-center bg-rose-600 text-slate-200">
           <div class="flex-1 flex items-center gap-x-3">
@@ -158,9 +153,9 @@
 
     </div>
 
-    <div class="component navBar w-full font-semibold rounded-lg pb-6 border border-slate-300">
+    <div class="component navBar flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400">
 
-      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+      <div class="header relative py-4 px-8 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
         <span>Navbar</span>
         <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
         <div class="getCode flex items-center gap-x-3">
@@ -174,14 +169,15 @@
         </div>
       </div>
 
-      <div class="container relative overflow-hidden py-6 px-6 flex items-end h-64">
+      <div class="relative overflow-hidden py-6 px-6 flex items-end h-64">
 
         <nav class="navbarWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 ">
 
           <!-- Main Links  -->
           <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
 
-            <div class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 rounded-lg p-3 text-xs font-bold text-slate-200 -top-40 left-0 w-1/3">
+            <!-- Float Nav  -->
+            <div class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 rounded-lg p-3 text-xs font-bold text-slate-200 -top-40 left-0 w-1/6">
               <a href="#" data-name="Home">Home</a>
               <a href="#" data-name="About">About</a>
               <a href="#" data-name="Pricing">Pricing</a>
