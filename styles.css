@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.customFont {
+  font-family: "Kaushan Script", cursive;
+}
+
+.hideScroller::-webkit-scrollbar {
+  display: none;
+}
+
+.hideScroller {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

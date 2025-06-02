@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>UI Components</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body class="h-auto bg-white dark:bg-[#222] text-[#111] dark:text-slate-300 ">
+
+  <h1 class="customFont p-6 text-center bg-white dark:bg-[#222] h-[84px] z-20 fixed top-0 left-0 w-full text-3xl font-bold">UI Components</h1>
+
+  <div class=" componentsContainer mt-[84px] p-3 pb-16 flex flex-col gap-y-12">
+
+    <div class="component formInputWrapper1 w-full font-semibold rounded-lg pb-6 border border-slate-300">
+
+      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+        <span>Input Form - I</span>
+        <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
+        <div class="getCode flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full viewCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div class="container mt-6 relative overflow-hidden py-6">
+
+        <div class="ui flex flex-col gap-y-8 px-4 ">
+          <div class="email relative">
+
+            <input type="email" name="Email" id="email" class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]" placeholder="Email ...">
+
+            <div class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
+                <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+              </svg>
+            </div>
+
+          </div>
+
+          <div class="password relative">
+
+            <input type="password" name="password" id="password" class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]" placeholder="Password ...">
+
+            <div class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z" clip-rule="evenodd" />
+              </svg>
+
+            </div>
+
+          </div>
+
+          <button class="submitButton w-full rounded-lg uppercase bg-emerald-600 p-3 text-white tracking-wider">Create</button>
+
+        </div>
+
+        <div class="code absolute overflow-hidden bg-emerald-600 flex p-4 flex-col gap-y-2 h-full w-full px-4 top-0 -right-[100vw] transition-all ease-in-out duration-300 bg-white">
+
+          <div class="compCode h-full w-full overflow-y-auto flex items-start">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="component formInputWrapper2 w-full font-semibold rounded-lg pb-6 border border-slate-300">
+
+      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+        <span>Input Form - II</span>
+        <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
+        <div class="getCode flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full viewCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div class="container mt-6 relative overflow-hidden py-6">
+
+        <div class="ui flex flex-col gap-y-8 px-4 ">
+
+          <div class="email relative">
+            <input type="email" name="Email" id="email" class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
+            <div class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white -top-3 left-5 w-fit uppercase text-base flex items-center justify-center">
+              <span>email</span>
+            </div>
+
+          </div>
+
+          <div class="password relative">
+            <input type="password" name="Password" id="password" class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
+            <div class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white -top-3 left-5 w-fit uppercase text-base flex items-center justify-center">
+              <span>password</span>
+            </div>
+
+          </div>
+          <button class="submitButton w-full rounded-lg uppercase bg-emerald-600 p-3 text-white tracking-wider">Create</button>
+        </div>
+
+        <div class="code absolute overflow-hidden bg-emerald-600 flex p-4 flex-col gap-y-2 h-full w-full px-4 top-0 -right-[100vw] transition-all ease-in-out duration-300 bg-white">
+
+          <div class="compCode h-full w-full overflow-y-auto flex items-start">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="component alerts w-full font-semibold rounded-lg pb-6 border border-slate-300">
+
+      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+        <span>Alerts</span>
+        <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
+        <div class="getCode flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full viewCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div class="container mt-6 relative overflow-hidden py-6 px-6">
+
+        <div class="alertsWrapper rounded-lg w-full p-5 relative flex items-center bg-rose-600 text-slate-200">
+          <div class="flex-1 flex items-center gap-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+              <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+            <span class="alertMessage">Fields cannot be empty.</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-rose-300">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+          </svg>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="component navBar w-full font-semibold rounded-lg pb-6 border border-slate-300">
+
+      <div class="header relative p-4 bg-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+        <span>Navbar</span>
+        <div class="toolTip text-emerald-600 ease-in-out duration-300 transition-all"></div>
+        <div class="getCode flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full viewCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" />
+          </svg>
+
+        </div>
+      </div>
+
+      <div class="container relative overflow-hidden py-6 px-6 flex items-end h-64">
+
+        <nav class="navbarWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 ">
+
+          <!-- Main Links  -->
+          <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
+
+            <div class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 rounded-lg p-3 text-xs font-bold text-slate-200 -top-40 left-0 w-1/3">
+              <a href="#" data-name="Home">Home</a>
+              <a href="#" data-name="About">About</a>
+              <a href="#" data-name="Pricing">Pricing</a>
+              <a href="#" data-name="Contact">Contact</a>
+            </div>
+
+            <div class="currentPage flex items-center gap-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-emerald-600">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z" clip-rule="evenodd" />
+              </svg>
+
+              <a href="#" data-name="Home">Home</a>
+            </div>
+            <div class="rightLinks flex items-center gap-x-2">
+              <a href="#" data-name="About">About</a>
+              <a href="#" data-name="Pricing">Pricing</a>
+              <a href="#" data-name="Contact">Contact</a>
+
+            </div>
+          </div>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
