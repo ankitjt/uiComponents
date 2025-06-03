@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full" data-page="/plugins/highlight-keywords/">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>UI Components</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <link href="https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism-tomorrow.min.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="prism.css">
 
   <link rel="stylesheet" href="./styles.css">
 
@@ -196,6 +195,7 @@
 
     </div>
 
+    <!-- Navbar  -->
     <div
       class="component navBar flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
 
@@ -327,35 +327,39 @@
         </div>
         <div class="getCode flex items-center gap-x-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full getHTML">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
           </svg>
+          <span class="getJavascript">JS</span>
         </div>
       </div>
 
-      <div class="wrapper bg-emerald-600">
+      <div class="wrapper">
 
-        <div class="ui alertsWrapper h-64 text-slate-200 relative overflow-x-hidden">
+        <div class="ui alertsWrapper h-64 text-slate-200 relative overflow-x-hidden ">
 
-          <div class="section1 bg-rose-600 h-full w-full ">
-            <div class="rounded-lg w-full p-5 relative flex items-center bg-rose-600 text-slate-200">
-              <div class="flex-1 flex items-center gap-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
-                  <path fill-rule="evenodd"
-                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="alertMessage">Fields cannot be empty.</span>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="size-5 text-rose-300">
-                <path fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
-                  clip-rule="evenodd" />
-              </svg>
-
-            </div>
+          <div class="section1 h-fit w-full p-2 ">
+            <pre class="language-javascript"><code class="fillCode">
+                function formatHTML ( html )
+                {
+                  const tab = ' ' // 2 spaces
+                  let result = ''
+                  let indentLevel = 0
+                
+                  html.split( />\s*</ ).forEach( ( element, i )=>
+                  {
+                  if ( element.match( /^\/\w/ ) ) indentLevel--
+                  
+                  result += `${ tab.repeat( indentLevel ) }<${ element }>\n`
+                  
+                    if ( element.match( /^
+                    <?\w[^>]*[^\/]$/ ) && !element.startsWith( "input" ) ) indentLevel++
+                    } )
+                
+                  return result.trim()
+                }
+              </code></pre>
           </div>
           <div
             class="section2 absolute h-full overflow-y-auto w-full -right-[100vw] top-0 ease-in-out duration-300 transition-all bg-white ">
@@ -372,16 +376,70 @@
 
     </div>
 
+    <!-- Prism 2  -->
+
+    <div
+      class="component prism flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+
+      <div
+        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="testBtn">Prism</span>
+
+        <div
+          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
+        </div>
+
+        <div class="flex items-center gap-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="getCode size-7 ease-in-out duration-300 transition-all p-1 rounded-full" data-code="getHtml">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <span class="getCode size-7 ease-in-out duration-300 transition-all p-1 rounded-full " data-code="getJavascript">JS</span>
+        </div>
+
+      </div>
+
+      <div class="wrapper h-56 relative overflow-x-hidden overflow-y-auto" id="alerts">
+
+        <div class="viewWrapper flex items-center justify-center h-full w-full p-3">
+          <div class="view bg-rose-600 flex items-cenetr justify-between p-4 rounded-lg w-2/3 uppercase font-bold text-sm text-slate-200">
+            <div class="flex-1 flex items-center gap-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd"
+                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="alertMessage">Fields cannot be empty.</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-black closeAlert">
+              <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div class="htmlBlockWrapper absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3">
+          <pre class="language-html"><code class="htmlBlock fillCode"></code></pre>
+        </div>
+        <div class="javascriptBlockWrapper absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20">
+          <pre class="language-javascript"><code class="javascriptBlock fillCode"></code></pre>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
   <!-- Prism core -->
+  <script src="./prism.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script>
-
-
-  <script src="./script.js"></script>
+  <script src="./script.js" type="module"></script>
 </body>
 
 </html>
