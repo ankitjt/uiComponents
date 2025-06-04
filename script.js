@@ -1,104 +1,114 @@
 import { alertsLogic } from "./logic.js"
 
-const copyCode = document.querySelectorAll( ".copyCode" )
-
-copyCode.forEach( copyIcon =>
-{
-  copyIcon.addEventListener( "click", () =>
-  {
-    const parentComponent = copyIcon.closest( ".component" )
-    const targetNode = parentComponent.querySelector( ".wrapper .ui" )
-    const toolTip = parentComponent.querySelector( ".toolTip" )
-
-    setTimeout( () =>
-    {
-      toolTip.innerHTML = `Code Copied !!`
-      toolTip.classList.remove( "hidden" )
-      copyIcon.classList.add( "bg-emerald-600", "text-slate-200" )
-    }, 100 )
-    setTimeout( () =>
-    {
-      toolTip.innerHTML = ""
-      toolTip.classList.add( "hidden" )
-      copyIcon.classList.remove( "bg-emerald-600", "text-slate-200" )
-    }, 2000 )
-
-  } )
-} )
-// navigator.clipboard.writeText( targetNode.outerHTML )
-
-
-
-Prism.plugins.NormalizeWhitespace.setDefaults( {
+Prism.plugins.NormalizeWhitespace.setDefaults({
   "remove-trailing": true,
   "remove-indent": true,
   "break-lines": 80,
   "remove-initial-line-feed": false,
   "tabs-to-spaces": 4,
   "spaces-to-tabs": 4
-} )
+})
 
-let getCode = document.querySelectorAll( ".getCode" )
-getCode.forEach( showCode =>
-{
+const showCodeButtons = document.querySelectorAll(".getCodeButtons")
+showCodeButtons.forEach(codeButton => {
+  codeButton.addEventListener("click", () => {
 
-  showCode.addEventListener( "click", () =>
-  {
-    const component = showCode.closest( ".component" )
-    getCode.forEach( removeBg =>
-    {
-      removeBg.classList.remove( "bg-emerald-600" )
-    } )
-    const copyButton = component.querySelector( ".copyButton" )
-    copyButton.classList.remove( 'right-24' )
-    copyButton.classList.add( "-z-10", "right-0" )
+    showCodeButtons.forEach(button => { button.classList.remove("bg-emerald-600") })
 
-    const htmlBlockWrapper = component.querySelector( ".htmlBlockWrapper" )
-    const componentType = component.querySelector( ".wrapper" )
-    const javascriptBlockWrapper = component.querySelector( ".javascriptBlockWrapper" )
-    const viewWrapper = component.querySelector( ".viewWrapper" )
-    const htmlBlock = component.querySelector( ".htmlBlock" )
-    const javascriptBlock = component.querySelector( ".javascriptBlock" )
-    const codeType = showCode.dataset.code
+    const component = codeButton.closest(".component")
 
+    const componentName = component.querySelector(".componentName")
+    componentName.classList.add("text-slate-500")
+    componentName.classList.remove("text-white")
 
-    if ( codeType === "getHtml" )
-    {
-      showCode.classList.add( "bg-emerald-600" )
-      htmlBlockWrapper.classList.toggle( "-right-[100vw]" )
-      htmlBlockWrapper.classList.toggle( "right-0" )
-      javascriptBlockWrapper.classList.add( "-right-[100vw]" )
-      javascriptBlockWrapper.classList.remove( "right-0" )
-      htmlBlock.textContent = viewWrapper.outerHTML
-      setTimeout( () =>
-      {
-        copyButton.classList.add( "right-24" )
-        copyButton.classList.remove( "-z-10", "right-0" )
-        copyButton.addEventListener( "click", copyCodeFunction( "getHtml" ) )
+    const codeType = codeButton.dataset.code
 
-      }, 200 )
+    codeButton.classList.add("bg-emerald-600", "text-white")
+
+    const copyButton = component.querySelector(".copyButton")
+    copyButton.classList.remove("right-24")
+    copyButton.classList.add("right-0", "-z-10")
+    copyButton.textContent = "Copy"
+
+    const codeBlock = component.querySelector(".codeBlock")
+    codeBlock.innerHTML = ""
+    codeBlock.classList.add("-right-[100vw]")
+    codeBlock.classList.remove("right-0")
+
+    resetView(codeBlock, copyButton, codeButton, componentName)
+    showCode(component, codeType, copyButton, codeBlock)
+  })
+})
+
+const resetView = (codeBlock, copyButton, codeButton, componentName) => {
+
+  componentName.addEventListener("click", () => {
+
+    componentName.classList.remove("text-slate-500")
+    componentName.classList.add("text-white")
+
+    codeBlock.innerHTML = ""
+    codeBlock.classList.add("-right-[100vw]")
+    codeBlock.classList.remove("right-0")
+
+    copyButton.classList.remove("right-24")
+    copyButton.classList.add("right-0", "-z-10")
+    copyButton.textContent = "Copy"
+
+    codeButton.classList.remove("bg-emerald-600", "text-white")
+
+  })
+}
+
+const showCode = (component, codeType, copyButton, codeBlock) => {
+  const wrapper = component.querySelector(".wrapper")
+  const showLogic = wrapper.getAttribute("id")
+  const pre = document.createElement("pre")
+  const code = document.createElement("code")
+  code.classList.add("fillCode")
+
+  codeBlock.classList.add("right-0")
+  codeBlock.classList.remove("-right-[100vw]")
+
+  if (codeType === "getHtml") {
+    const viewWrapper = component.querySelector(".viewWrapper")
+    pre.classList.add("language-html")
+    code.textContent = viewWrapper.outerHTML
+    pre.appendChild(code)
+    codeBlock.appendChild(pre)
+    copyCode(component, codeType, copyButton)
+  }
+  else if (codeType === "getJavascript") {
+    pre.classList.add("language-javascript")
+    copyCode(component, codeType, copyButton)
+    if (showLogic === "alerts") {
+      code.textContent = alertsLogic
+      pre.appendChild(code)
+      codeBlock.appendChild(pre)
     }
-    else if ( codeType === "getJavascript" )
-    {
-      showCode.classList.add( "bg-emerald-600" )
-      htmlBlockWrapper.classList.add( "-right-[100vw]" )
-      htmlBlockWrapper.classList.remove( "right-0" )
-      javascriptBlockWrapper.classList.toggle( "-right-[100vw]" )
-      javascriptBlockWrapper.classList.toggle( "right-0" )
-      setTimeout( () =>
-      {
-        copyButton.classList.add( "right-24" )
-        copyButton.classList.remove( "-z-10", "right-0" )
-        copyButton.addEventListener( "click", copyCodeFunction( "getJavascript" ) )
-      }, 200 )
+  }
+}
 
-      if ( componentType.getAttribute( 'id' ) === 'alerts' ) javascriptBlock.textContent = alertsLogic
-    }
-  } )
-} )
+const copyCode = (component, codeType, copyButton) => {
+  setTimeout(() => {
+    copyButton.classList.add("right-24")
+    copyButton.classList.remove("right-0", "-z-10")
+  }, 100)
 
-const copyCodeFunction = blockType =>
-{
-  if ( blockType === "getHtml" ) console.log( 'You got HTML code.' )
-  if ( blockType === "getJavascript" ) console.log( 'You got Javascript code.' )
+  copyButton.addEventListener("click", () => {
+    copyButton.textContent = "Copied"
+    copyAction(component, codeType)
+  }, { once: true })
+}
+
+const copyAction = (component, codeType) => {
+  if (codeType === "getHtml") {
+    const viewWrapper = component.querySelector(".viewWrapper")
+    navigator.clipboard.writeText(viewWrapper.outerHTML)
+  }
+  if (codeType === "getJavascript") {
+    const wrapper = component.querySelector(".wrapper")
+    const wrapperType = wrapper.getAttribute("id")
+    if (wrapperType === "alerts") navigator.clipboard.writeText(alertsLogic)
+  }
 }

@@ -20,65 +20,68 @@
 
   <div class=" componentsContainer mt-[84px] w-full p-3 pb-16 flex flex-col gap-y-12">
 
-    <div
-      class="component formInputWrapper1 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+    <!-- Input Form - I  -->
+    <div class="component h-80 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
 
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span>Input Form - I</span>
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="componentName text-white" data-component="inputForm1">Input Form I</span>
+
         <div
           class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
-
         </div>
 
-        <div class="getCode flex items-center gap-x-3">
+        <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
+          <div
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
+            <span>Copy</span>
+          </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
           </svg>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
         </div>
+
       </div>
 
-      <div class="wrapper relative px-8 py-10">
+      <div class="wrapper h-full w-full relative overflow-x-hidden overflow-y-auto" id="inputForm1">
 
-        <div class="ui flex flex-col gap-y-8">
+        <!-- Rendered Component  -->
+        <div class="viewWrapper flex flex-col justify-center gap-y-6 h-full w-full py-4 px-8">
 
-          <div class="inputWrapper flex flex-col gap-y-8">
+          <div class="email relative">
 
-            <div class="email relative">
+            <input type="email" name="Email" id="email"
+              class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]"
+              placeholder="Email ...">
 
-              <input type="email" name="Email" id="email"
-                class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]"
-                placeholder="Email ...">
-
-              <div
-                class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
-                  <path
-                    d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                  <path
-                    d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                </svg>
-              </div>
-
+            <div
+              class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 ">
+                <path
+                  d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                <path
+                  d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+              </svg>
             </div>
 
-            <div class="password relative">
+          </div>
 
-              <input type="password" name="password" id="password"
-                class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]"
-                placeholder="Password ...">
+          <div class="password relative">
 
-              <div
-                class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                  <path fill-rule="evenodd"
-                    d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
-                    clip-rule="evenodd" />
-                </svg>
+            <input type="password" name="password" id="password"
+              class="formInput peer focus:outline-none focus:border-emerald-600 rounded-lg p-3 pl-12 bg-transparent w-full border-slate-300 placeholder:text-[#111]"
+              placeholder="Password ...">
 
-              </div>
+            <div
+              class="iconWrap absolute bg-transparent top-0 h-full w-12 flex items-center justify-center text-slate-400 peer-focus:text-emerald-600">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                  d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z"
+                  clip-rule="evenodd" />
+              </svg>
 
             </div>
 
@@ -88,52 +91,61 @@
 
         </div>
 
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
+
       </div>
 
     </div>
 
+    <!-- Input Form - II  -->
     <div
-      class="component formInputWrapper2 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+      class="component h-80 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
 
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span>Input Form - II</span>
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="componentName text-white" data-component="prism">Input Form II</span>
+
         <div
           class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
         </div>
-        <div class="getCode flex items-center gap-x-3">
+
+        <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
+          <div
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
+            <span>Copy</span>
+          </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
           </svg>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
         </div>
+
       </div>
 
-      <div class="wrapper relative px-8 py-10">
+      <div class="wrapper h-full relative overflow-x-hidden overflow-y-auto" id="inputForm2">
 
-        <div class="ui flex flex-col gap-y-8">
+        <!-- Rendered Component  -->
+        <div class="viewWrapper flex flex-col gap-y-6 justify-center h-full w-full py-4 px-8">
 
-          <div class="inputsWrapper flex flex-col gap-y-8 dark:text-slate-200 text-[#111]">
-
-            <div class="email relative">
-              <input type="email" name="Email" id="email"
-                class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
-              <div
-                class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white dark:bg-[#222] -top-3 left-5 w-fit uppercase text-base flex items-center justify-center">
-                <span>email</span>
-              </div>
-
+          <div class="email relative">
+            <input type="email" name="Email" id="email"
+              class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
+            <div
+              class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white dark:bg-[#222] -top-2 left-5 w-fit uppercase text-sm flex items-center justify-center">
+              <span>email</span>
             </div>
 
-            <div class="password relative">
-              <input type="password" name="Password" id="password"
-                class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
-              <div
-                class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white dark:bg-[#222] -top-3 left-5 w-fit uppercase text-base flex items-center justify-center">
-                <span>password</span>
-              </div>
+          </div>
 
+          <div class="password relative">
+            <input type="password" name="Password" id="password"
+              class="formInput peer rounded-lg p-3 bg-transparent w-full border-slate-300 focus:border-emerald-600 focus:outline-none placeholder:text-[#111]">
+            <div
+              class="iconWrap text-slate-400 peer-focus:text-emerald-600 transition-colors absolute z-10 bg-white dark:bg-[#222] -top-2 left-5 w-fit uppercase text-sm flex items-center justify-center">
+              <span>password</span>
             </div>
 
           </div>
@@ -143,248 +155,20 @@
 
         </div>
 
-        <div
-          class="code absolute overflow-hidden bg-emerald-600 flex p-4 flex-col gap-y-2 h-full w-full px-4 top-0 -right-[100vw] transition-all ease-in-out duration-300 bg-white">
-
-          <div class="compCode h-full w-full overflow-y-auto flex items-start">
-          </div>
-        </div>
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
 
       </div>
 
     </div>
 
+    <!-- Alerts  -->
     <div
-      class="component alerts flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+      class="component h-80 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
 
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span>Alerts</span>
-        <div
-          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
-        </div>
-        <div class="getCode flex items-center gap-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-          </svg>
-        </div>
-      </div>
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
 
-      <div class="wrapper relative px-8 py-10">
-
-        <div class="ui alertsWrapper rounded-lg w-full p-5 relative flex items-center bg-rose-600 text-slate-200">
-          <div class="flex-1 flex items-center gap-x-3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
-              <path fill-rule="evenodd"
-                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="alertMessage">Fields cannot be empty.</span>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 text-rose-300">
-            <path fill-rule="evenodd"
-              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
-              clip-rule="evenodd" />
-          </svg>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Navbar  -->
-    <div
-      class="component navBar flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
-
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span>Navbar</span>
-        <div
-          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
-        </div>
-        <div class="getCode flex items-center gap-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-          </svg>
-        </div>
-      </div>
-
-      <div class="relative overflow-hidden py-6 px-6 flex items-end h-64">
-
-        <nav
-          class="navbarWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 dark:bg-[#111] dark:text-slate-200 ">
-
-          <!-- Main Links  -->
-          <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
-
-            <!-- Float Nav  -->
-            <div
-              class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 dark:bg-[#111] rounded-lg p-3 text-xs font-bold text-slate-200 -top-40 left-0 max-w-1/3 w-1/2">
-              <a href="#" data-name="Home">Home</a>
-              <a href="#" data-name="About">About</a>
-              <a href="#" data-name="Pricing">Pricing</a>
-              <a href="#" data-name="Contact">Contact</a>
-            </div>
-
-            <div class="currentPage flex items-center gap-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="size-5 text-emerald-600 dark:text-slate-200 ">
-                <path fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z"
-                  clip-rule="evenodd" />
-              </svg>
-
-              <a href="#" data-name="Home">Home</a>
-            </div>
-            <div class="rightLinks flex items-center gap-x-2">
-              <a href="#" data-name="About">About</a>
-              <a href="#" data-name="Pricing">Pricing</a>
-              <a href="#" data-name="Contact">Contact</a>
-
-            </div>
-          </div>
-
-        </nav>
-
-      </div>
-
-    </div>
-
-    <!-- Dropdown  -->
-    <div
-      class="component dropDowns flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
-
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span>Dropdown</span>
-        <div
-          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
-        </div>
-        <div class="getCode flex items-center gap-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full copyCode">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-          </svg>
-        </div>
-      </div>
-
-      <div class="relative overflow-hidden py-6 px-6 flex items-start h-[300px]">
-
-        <nav
-          class="dropdownWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 dark:bg-[#111] dark:text-slate-200 ">
-
-          <!-- Main Links  -->
-          <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
-
-            <!-- Float Nav  -->
-            <div
-              class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 dark:bg-[#111] rounded-lg p-3 text-xs font-bold text-slate-200 top-12 left-0 max-w-1/3 w-1/2">
-              <span href="#" data-name="Home" class="p-2 rounded-lg bg-black">Home</span>
-              <span href="#" data-name="About" class="p-2 rounded-lg ">About</span>
-              <span href="#" data-name="Pricing" class="p-2 rounded-lg ">Pricing</span>
-              <span href="#" data-name="Contact" class="p-2 rounded-lg ">Contact</span>
-            </div>
-
-            <div class="currentPage flex items-center gap-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="size-5 text-emerald-600 dark:text-slate-200 rotate-180">
-                <path fill-rule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z"
-                  clip-rule="evenodd" />
-              </svg>
-
-              <a href="#" data-name="Home">Home</a>
-            </div>
-            <div class="rightLinks flex items-center gap-x-2">
-              <a href="#" data-name="About">About</a>
-              <a href="#" data-name="Pricing">Pricing</a>
-              <a href="#" data-name="Contact">Contact</a>
-
-            </div>
-          </div>
-
-        </nav>
-
-      </div>
-
-    </div>
-
-    <!-- Prism  -->
-    <div
-      class="component prism flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
-
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-        <span class="testBtn">Alerts</span>
-        <div
-          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
-        </div>
-        <div class="getCode flex items-center gap-x-3">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-7 ease-in-out duration-300 transition-all p-1 rounded-full getHTML">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-          </svg>
-          <span class="getJavascript">JS</span>
-        </div>
-      </div>
-
-      <div class="wrapper">
-
-        <div class="ui alertsWrapper h-64 text-slate-200 relative overflow-x-hidden ">
-
-          <div class="section1 h-fit w-full p-2 ">
-            <pre class="language-javascript"><code class="fillCode">
-                function formatHTML ( html )
-                {
-                  const tab = ' ' // 2 spaces
-                  let result = ''
-                  let indentLevel = 0
-                
-                  html.split( />\s*</ ).forEach( ( element, i )=>
-                  {
-                  if ( element.match( /^\/\w/ ) ) indentLevel--
-                  
-                  result += `${ tab.repeat( indentLevel ) }<${ element }>\n`
-                  
-                    if ( element.match( /^
-                    <?\w[^>]*[^\/]$/ ) && !element.startsWith( "input" ) ) indentLevel++
-                    } )
-                
-                  return result.trim()
-                }
-              </code></pre>
-          </div>
-          <div
-            class="section2 absolute h-full overflow-y-auto w-full -right-[100vw] top-0 ease-in-out duration-300 transition-all bg-white ">
-            <pre class="text-left p-4 m-0 whitespace-pre-wrap break-words rounded-lg overflow-auto userCode">
-              <code class="langage-html">
-                
-              </code>
-            </pre>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Prism 2  -->
-
-    <div
-      class="component prism flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
-
-      <div
-        class="header relative py-4 px-8  bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
-
-        <span class="testBtn">Prism</span>
+        <span class="componentName text-white" data-component="prism">Alerts</span>
 
         <div
           class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
@@ -392,26 +176,25 @@
 
         <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
           <div
-            class="absolute right-0 copyButton transition-all ease-in-out duration-300 bg-emerald-600 text-xs -z-10 rounded-lg p-2">
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
             <span>Copy</span>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="getCode size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20"
-            data-code="getHtml">
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
           </svg>
-          <span class="getCode size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20"
-            data-code="getJavascript">JS</span>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
         </div>
 
       </div>
 
-      <div class="wrapper h-56 relative overflow-x-hidden overflow-y-auto" id="alerts">
+      <div class="wrapper h-full relative overflow-x-hidden overflow-y-auto" id="alerts">
 
+        <!-- Rendered Component  -->
         <div class="viewWrapper flex items-center justify-center h-full w-full p-3">
-          <div
-            class="view bg-rose-600 flex items-cenetr justify-between p-4 rounded-lg w-2/3 uppercase font-bold text-sm text-slate-200">
+
+          <div class="view bg-rose-600 flex items-cenetr justify-between p-4 rounded-lg w-2/3 uppercase font-bold text-sm text-slate-200">
             <div class="flex-1 flex items-center gap-x-3">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
                 <path fill-rule="evenodd"
@@ -431,14 +214,217 @@
 
         </div>
 
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
+
+      </div>
+
+    </div>
+
+    <!-- Navbar  -->
+    <div
+      class="component h-80 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="componentName text-white" data-component="navbar">Navbar</span>
+
         <div
-          class="htmlBlockWrapper absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3">
-          <pre class="language-html"><code class="htmlBlock fillCode"></code></pre>
+          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
         </div>
+
+        <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
+          <div
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
+            <span>Copy</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
+        </div>
+
+      </div>
+
+      <div class="wrapper h-full relative overflow-x-hidden overflow-y-auto" id="navbar">
+
+        <!-- Rendered Component  -->
+        <div class="viewWrapper flex items-end h-full w-full py-4 px-8">
+          <nav
+            class="navbarWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 dark:bg-[#111] dark:text-slate-200 ">
+
+            <!-- Main Links  -->
+            <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
+
+              <!-- Float Nav  -->
+              <div
+                class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 dark:bg-[#111] rounded-lg p-3 text-xs font-bold text-slate-200 -top-40 left-0 max-w-1/3 w-1/2">
+                <a href="#" data-name="Home">Home</a>
+                <a href="#" data-name="About">About</a>
+                <a href="#" data-name="Pricing">Pricing</a>
+                <a href="#" data-name="Contact">Contact</a>
+              </div>
+
+              <div class="currentPage flex items-center gap-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                  class="size-5 text-emerald-600 dark:text-slate-200 ">
+                  <path fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <a href="#" data-name="Home">Home</a>
+              </div>
+              <div class="rightLinks flex items-center gap-x-2">
+                <a href="#" data-name="About">About</a>
+                <a href="#" data-name="Pricing">Pricing</a>
+                <a href="#" data-name="Contact">Contact</a>
+
+              </div>
+            </div>
+
+          </nav>
+        </div>
+
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
+
+      </div>
+
+    </div>
+
+    <!-- Dropdown  -->
+    <div
+      class="component h-96 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="componentName text-white" data-component="dropdown">Dropdown</span>
+
         <div
-          class="javascriptBlockWrapper absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3">
-          <pre class="language-javascript"><code class="javascriptBlock fillCode"></code></pre>
+          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
         </div>
+
+        <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
+          <div
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
+            <span>Copy</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
+        </div>
+
+      </div>
+
+      <div class="wrapper h-full relative overflow-x-hidden overflow-y-auto" id="dropdown">
+
+        <!-- Rendered Component  -->
+        <div class="viewWrapper flex items-start h-full w-full py-4 px-8">
+
+          <nav
+            class="dropdownWrapper rounded-lg w-full p-5 relative flex items-start bg-slate-200 dark:bg-[#111] dark:text-slate-200 ">
+
+            <!-- Main Links  -->
+            <div class="navLinks flex items-center justify-between w-full uppercase text-xs font-bold relative">
+
+              <!-- Float Nav  -->
+              <div
+                class="floatNav flex flex-col gap-y-3 absolute bg-emerald-600 dark:bg-[#111] rounded-lg p-3 text-xs font-bold text-slate-200 top-12 left-0 max-w-1/3 w-1/2">
+                <span href="#" data-name="Home" class="p-2 rounded-lg bg-black">Home</span>
+                <span href="#" data-name="About" class="p-2 rounded-lg ">About</span>
+                <span href="#" data-name="Pricing" class="p-2 rounded-lg ">Pricing</span>
+                <span href="#" data-name="Contact" class="p-2 rounded-lg ">Contact</span>
+              </div>
+
+              <div class="currentPage flex items-center gap-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                  class="size-5 text-emerald-600 dark:text-slate-200 rotate-180">
+                  <path fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.72-1.72v5.69a.75.75 0 0 0 1.5 0v-5.69l1.72 1.72a.75.75 0 1 0 1.06-1.06l-3-3Z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <a href="#" data-name="Home">Home</a>
+              </div>
+              <div class="rightLinks flex items-center gap-x-2">
+                <a href="#" data-name="About">About</a>
+                <a href="#" data-name="Pricing">Pricing</a>
+                <a href="#" data-name="Contact">Contact</a>
+
+              </div>
+            </div>
+
+          </nav>
+
+        </div>
+
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
+
+      </div>
+
+    </div>
+
+    <!-- Prism  -->
+    <div
+      class="component h-80 flex flex-col font-semibold rounded-lg overflow-hidden border border-slate-400 dark:border-[#111]">
+
+      <div class="header relative py-4 px-8 bg-slate-200 dark:bg-[#111] dark:text-slate-200 text-center rounded-t-lg text-sm font-bold uppercase flex items-center justify-between">
+
+        <span class="componentName text-white" data-component="prism">Prism</span>
+
+        <div
+          class="toolTip text-slate-200 ease-in-out duration-300 transition-all absolute top-1/2 -translate-y-1/2 right-16 py-1 px-2 text-sm hidden capitalize rounded-lg bg-emerald-600">
+        </div>
+
+        <div class="flex items-center gap-x-3 relative dark:bg-[#111] h-8">
+          <div
+            class="copyButton absolute right-0 transition-all ease-in-out duration-300 bg-emerald-600 capitalize text-xs -z-10 rounded-lg p-2">
+            <span>Copy</span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getHtml">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          <span class="getCodeButtons text-slate-500 size-7 ease-in-out duration-300 transition-all p-1 rounded-full z-20" data-code="getJavascript">JS</span>
+        </div>
+
+      </div>
+
+      <div class="wrapper h-full relative overflow-x-hidden overflow-y-auto" id="alerts">
+
+        <!-- Rendered Component  -->
+        <div class="viewWrapper flex items-center justify-center h-full w-full py-4 px-8">
+
+          <div class="view bg-rose-600 flex items-cenetr justify-between p-4 rounded-lg w-full uppercase font-bold text-sm text-slate-200">
+            <div class="flex-1 flex items-center gap-x-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd"
+                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="alertMessage">Fields cannot be empty.</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="size-5 text-black closeAlert">
+              <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </div>
+
+        </div>
+
+        <!-- Code Block  -->
+        <div class="codeBlock absolute -right-[100vw] ease-in-out duration-300 transition-all top-0 w-full z-20 p-3"></div>
 
       </div>
 
@@ -446,9 +432,7 @@
 
   </div>
 
-  <!-- Prism core -->
   <script src="./prism.js"></script>
-
   <script src="./script.js" type="module"></script>
 </body>
 
