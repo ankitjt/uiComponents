@@ -1,4 +1,5 @@
 import { alertsLogic } from "./logic.js"
+import './animate.js'
 
 Prism.plugins.NormalizeWhitespace.setDefaults({
   "remove-trailing": true,

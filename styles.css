@@ -19,3 +19,32 @@
   scrollbar-width: none;
   /* Firefox */
 }
+
+.outerCircle {
+  animation: outerSpin 1s ease-in-out infinite forwards;
+}
+
+@keyframes outerSpin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.innerCircle {
+  animation: innerSpin 1s ease-in-out infinite;
+  animation-delay: 0ms;
+}
+
+@keyframes innerSpin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(-360deg)
+  }
+}
