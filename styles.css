@@ -21,7 +21,8 @@
 }
 
 .outerCircle {
-  animation: outerSpin 1s ease-in-out infinite forwards;
+  animation: outerSpin 2s linear infinite forwards;
+  will-change: transform
 }
 
 @keyframes outerSpin {
@@ -35,8 +36,9 @@
 }
 
 .innerCircle {
-  animation: innerSpin 1s ease-in-out infinite;
+  animation: innerSpin 2.5s linear infinite;
   animation-delay: 0ms;
+  will-change: transform
 }
 
 @keyframes innerSpin {
@@ -46,5 +48,36 @@
 
   100% {
     transform: rotate(-360deg)
+  }
+}
+
+.dots {
+  animation: bounceDot 0.6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.dot1 {
+  animation-delay: 0s;
+}
+
+.dot2 {
+  animation-delay: 0.2s;
+}
+
+.dot3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounceDot {
+  0% {
+    transform: translateY(0px)
+  }
+
+  50% {
+    transform: translateY(-5px)
+  }
+
+  100% {
+    transform: translateY(0)
   }
 }
